@@ -32,14 +32,15 @@ public class RecipeService {
 
     public Optional<Recipe> createRecipe(Recipe recipe){
         
-
         return Optional.of(recipeRepository.save(recipe));
     }
 
     public void createRecipeRelations(Recipe recipe){
+        
+        recipe.getIngredients().forEach(ingredient -> ingredient.setRecipe(recipe));
+        recipe.getCategories().forEach(category -> category.setRecipe(recipe));
 
-        recipe.getIngredients().forEach(ingredient -> ingredientQuantityRepository.save(ingredient));
-
-        recipe.getCategories().forEach(category -> recipeCategoryRepository.save(category));
+        recipe.getIngredients().forEach(ingredient -> ingredientQuantityRepository.save(ingredient)); 
+        recipe.getCategories().forEach(category -> recipeCategoryRepository.save(category)); 
     }
 }

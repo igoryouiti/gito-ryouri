@@ -16,7 +16,7 @@ public abstract class DomainEntity implements IEntity{
     }
 
     @Override
-    public void setId() {
-
+    public void setId(Long id) {
+        this.id = id;
     }
 }
