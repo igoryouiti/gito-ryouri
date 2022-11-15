@@ -13,6 +13,19 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "IngredientQuantity")
 public class IngredientQuantity extends DomainEntity{
 
+    public IngredientQuantity() {
+    }
+
+    public IngredientQuantity(String quantity, String measurement, Ingredient ingredient) {
+        this.quantity = quantity;
+        this.measurement = measurement;
+        this.ingredient = ingredient;
+    }
+
+    public IngredientQuantity(Recipe recipe) {
+        this.recipe = recipe;
+    }
+
     @NotBlank
     private String quantity;
 

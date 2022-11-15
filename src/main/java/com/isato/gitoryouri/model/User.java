@@ -13,6 +13,17 @@ import java.util.List;
 @Table(name = "tb_user")
 public class User extends DomainEntity{
 
+    public User() {
+    }
+
+    public User(String name, String email, String password, String photo_url, String about) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.photo_url = photo_url;
+        this.about = about;
+    }
+
     @NotBlank
     private String name;
 

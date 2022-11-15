@@ -11,6 +11,14 @@ import java.util.List;
 @Table(name = "tb_ingredient")
 public class Ingredient extends DomainEntity{
 
+    public Ingredient() {
+    }
+
+    public Ingredient(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
     @NotBlank(message = "Name is required!")
     @Size(min = 3, max = 255, message = "Name must have at least 3 characters")
     private String name;

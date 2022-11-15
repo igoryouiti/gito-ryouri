@@ -12,6 +12,23 @@ import java.util.List;
 @Table(name = "tb_recipe")
 public class Recipe extends DomainEntity{
 
+    public Recipe() {
+    }
+
+    public Recipe(String name, String method, String description,
+                  String photo_url, String video_url, User user,
+                  List<RecipeCategory> categories, List<IngredientQuantity> ingredients) {
+        this.name = name;
+        this.method = method;
+        this.description = description;
+        this.photo_url = photo_url;
+        this.video_url = video_url;
+        this.user = user;
+        this.categories = categories;
+        this.ingredients = ingredients;
+    }
+
+
 
     @NotBlank(message = "Name is required!")
     @Size(min = 3, max = 255, message = "Name must have at least 3 characters")

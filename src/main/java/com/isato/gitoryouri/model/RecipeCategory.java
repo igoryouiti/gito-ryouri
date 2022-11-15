@@ -19,6 +19,13 @@ public class RecipeCategory extends DomainEntity{
     @JsonIgnoreProperties("categories")
     private Recipe recipe;
 
+    public RecipeCategory() {
+    }
+
+    public RecipeCategory(Category category, Recipe recipe) {
+        this.category = category;
+        this.recipe = recipe;
+    }
 
     public Category getCategory() {
         return category;
